@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
-// const User = require('../user/model.js')
+const User = require("../user/model.js");
 
 const Product = db.define(
   "product",
@@ -28,6 +28,6 @@ const Product = db.define(
   { timestamps: false }
 );
 
-// Product.belongsTo(User)
+Product.belongsTo(User);
 
 module.exports = Product;
