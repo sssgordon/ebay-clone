@@ -6,11 +6,13 @@ const User = db.define(
   {
     email: {
       type: Sequelize.STRING,
-      field: "email"
+      field: "email",
+      allowNull: false
     },
     phoneNumber: {
       type: Sequelize.INTEGER,
-      field: "phone_number"
+      field: "phone_number",
+      allowNull: false
     }
   },
   { tableName: "users", timestamps: false }

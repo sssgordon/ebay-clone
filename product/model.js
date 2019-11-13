@@ -7,7 +7,8 @@ const Product = db.define(
   {
     title: {
       type: Sequelize.STRING,
-      field: "title"
+      field: "title",
+      allowNull: false
     },
     description: {
       type: Sequelize.STRING,
@@ -15,11 +16,13 @@ const Product = db.define(
     },
     picture: {
       type: Sequelize.STRING,
-      field: "picture_url"
+      field: "picture_url",
+      allowNull: false
     },
     price: {
       type: Sequelize.FLOAT,
-      field: "price"
+      field: "price",
+      allowNull: false
     }
   },
   { timestamps: false }
