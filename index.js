@@ -3,6 +3,7 @@ const app = express();
 const productRouter = require("./product/router");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const User = require("./user/model");
 
 const corsMiddleware = cors();
 app.use(corsMiddleware);
