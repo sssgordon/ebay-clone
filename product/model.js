@@ -22,7 +22,7 @@ const Product = db.define(
       field: "price"
     }
   },
-  { tableName: "products" }
+  { tableName: "products", timestamps: false }
 );
 
 // Product.belongsTo(User)
