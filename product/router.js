@@ -1,18 +1,18 @@
 const { Router } = require("express");
 const Product = require("./model");
 const router = new Router();
-// const User =
+const User = require("../user/model");
 
 //CRUD
 router.get("/products", (req, res, next) => {
   //
-  Product.findAll() //later {include: [User]}
+  Product.findAll({ include: [User] })
     .then(products => res.json(products))
     .catch(next);
 });
 
-router.get("/product/:productId", (req, res, next) => {
-  Product.findByPk(req.params.productId) //later: , {include: [User]}
+router.get("/products/:productId", (req, res, next) => {
+  Product.findByPk(req.params.productId, { include: [User] })
     .then(product => {
       if (product) {
         res.json(product);
@@ -23,7 +23,7 @@ router.get("/product/:productId", (req, res, next) => {
     .catch(next);
 });
 
-router.post("/product", (req, res, next) => {
+router.post("/products", (req, res, next) => {
   Product.create(req.body)
     .then(newProduct => res.json(newProduct))
     .catch(next);

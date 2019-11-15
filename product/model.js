@@ -7,27 +7,27 @@ const Product = db.define(
   {
     title: {
       type: Sequelize.STRING,
-      field: "title",
-      allowNull: false
+      field: "title"
+      //   allowNull: false
+    },
+    imageUrl: {
+      type: Sequelize.TEXT,
+      field: "image_url"
     },
     description: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT, // it is TEXT because it may contain many characters
       field: "description"
     },
-    picture: {
-      type: Sequelize.STRING,
-      field: "picture_url",
-      allowNull: false
-    },
     price: {
-      type: Sequelize.FLOAT,
-      field: "price",
-      allowNull: false
+      type: Sequelize.DECIMAL, //postgres doesn't speak float
+      field: "price"
+      //   allowNull: false
     }
   },
   { timestamps: false }
 );
 
+// Product.hasMany(Image);
 Product.belongsTo(User);
 
 module.exports = Product;

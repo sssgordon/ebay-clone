@@ -6,16 +6,16 @@ const User = db.define(
   {
     email: {
       type: Sequelize.STRING,
-      field: "email",
-      allowNull: false
+      field: "email"
+      //   allowNull: false
     },
     phoneNumber: {
       type: Sequelize.INTEGER,
-      field: "phone_number",
-      allowNull: false
+      field: "phone_number"
+      //   allowNull: false
     }
   },
-  { tableName: "users", timestamps: false }
+  { timestamps: false }
 );
 
 module.exports = User;
